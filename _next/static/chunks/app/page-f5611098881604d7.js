@@ -4244,6 +4244,7 @@ class PhotoSwipeLightbox extends PhotoSwipeBase {
 }
 
 
+//# sourceMappingURL=photoswipe-lightbox.esm.js.map
 
 // EXTERNAL MODULE: ./node_modules/photoswipe/dist/photoswipe.css
 var photoswipe = __webpack_require__(8429);

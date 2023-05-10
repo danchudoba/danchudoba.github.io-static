@@ -5909,6 +5909,8 @@ function extractInterceptionRouteInformation(path) {
     };
 }
 
+//# sourceMappingURL=interception-routes.js.map
+
 /***/ }),
 
 /***/ 6927:
@@ -6206,7 +6208,7 @@ function _interop_require_wildcard(obj, nodeInterop) {
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	!function() {
-/******/ 		__webpack_require__.p = "/_next/";
+/******/ 		__webpack_require__.p = "./_next/";
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
