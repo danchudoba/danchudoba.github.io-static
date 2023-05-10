@@ -424,7 +424,7 @@ async function initialize(opts) {
     const prefix = initialData.assetPrefix || "";
     // With dynamic assetPrefix it's no longer possible to set assetPrefix at the build time
     // So, this is how we do it in the client side at runtime
-    __webpack_require__.p = "" + prefix + "/_next/" //eslint-disable-line
+    __webpack_require__.p = "" + prefix + "./_next/" //eslint-disable-line
     ;
     // Initialize next/config with the environment configuration
     (0, _runtimeconfig.setConfig)({
@@ -486,7 +486,7 @@ function AppContainer(param) {
     }, /*#__PURE__*/ _react.default.createElement(_headmanagercontext.HeadManagerContext.Provider, {
         value: headManager
     }, /*#__PURE__*/ _react.default.createElement(_imageconfigcontext.ImageConfigContext.Provider, {
-        value: {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false}
+        value: {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"./_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":false}
     }, children)))))));
 }
 const wrapApp = (App)=>(wrappedAppProps)=>{
@@ -1010,7 +1010,7 @@ class PageLoader {
         }
         const getHrefForSlug = (path)=>{
             const dataRoute = (0, _getassetpathfromroute.default)((0, _removetrailingslash.removeTrailingSlash)((0, _addlocale.addLocale)(path, locale)), ".json");
-            return (0, _addbasepath.addBasePath)("/_next/data/" + this.buildId + dataRoute + search, true);
+            return (0, _addbasepath.addBasePath)("./_next/data/" + this.buildId + dataRoute + search, true);
         };
         return getHrefForSlug(params.skipInterpolation ? asPathname : (0, _isdynamic.isDynamicRoute)(route) ? (0, _interpolateas.interpolateAs)(hrefPathname, asPathname, query).result : route);
     }
@@ -1528,7 +1528,7 @@ function getFilesForRoute(assetPrefix, route) {
         if (!(route in manifest)) {
             throw markAssetError(new Error("Failed to lookup route: " + route));
         }
-        const allFiles = manifest[route].map((entry)=>assetPrefix + "/_next/" + encodeURI(entry));
+        const allFiles = manifest[route].map((entry)=>assetPrefix + "./_next/" + encodeURI(entry));
         return {
             scripts: allFiles.filter((v)=>v.endsWith(".js")).map((v)=>(0, _trustedtypes.__unsafeCreateTrustedScriptURL)(v)),
             css: allFiles.filter((v)=>v.endsWith(".css"))
@@ -3733,7 +3733,7 @@ const imageConfigDefault = {
         256,
         384
     ],
-    path: "/_next/image",
+    path: "./_next/image",
     loader: "default",
     loaderFile: "",
     domains: [],
@@ -5764,7 +5764,7 @@ function formatNextPathnameInfo(info) {
         pathname = (0, _removetrailingslash.removeTrailingSlash)(pathname);
     }
     if (info.buildId) {
-        pathname = (0, _addpathsuffix.addPathSuffix)((0, _addpathprefix.addPathPrefix)(pathname, "/_next/data/" + info.buildId), info.pathname === "/" ? "index.json" : ".json");
+        pathname = (0, _addpathsuffix.addPathSuffix)((0, _addpathprefix.addPathPrefix)(pathname, "./_next/data/" + info.buildId), info.pathname === "/" ? "index.json" : ".json");
     }
     pathname = (0, _addpathprefix.addPathPrefix)(pathname, info.basePath);
     return !info.buildId && info.trailingSlash ? !pathname.endsWith("/") ? (0, _addpathsuffix.addPathSuffix)(pathname, "/") : pathname : (0, _removetrailingslash.removeTrailingSlash)(pathname);
@@ -5931,8 +5931,8 @@ function getNextPathnameInfo(pathname, options) {
         info.pathname = (0, _removepathprefix.removePathPrefix)(info.pathname, basePath);
         info.basePath = basePath;
     }
-    if (options.parseData === true && info.pathname.startsWith("/_next/data/") && info.pathname.endsWith(".json")) {
-        const paths = info.pathname.replace(/^\/_next\/data\//, "").replace(/\.json$/, "").split("/");
+    if (options.parseData === true && info.pathname.startsWith("./_next/data/") && info.pathname.endsWith(".json")) {
+        const paths = info.pathname.replace(/^\./_next\/data\//, "").replace(/\.json$/, "").split("/");
         const buildId = paths[0];
         info.pathname = paths[1] !== "index" ? "/" + paths.slice(1).join("/") : "/";
         info.buildId = buildId;
@@ -7993,7 +7993,7 @@ function _interop_require_wildcard(obj, nodeInterop) {
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	!function() {
-/******/ 		__webpack_require__.p = "/_next/";
+/******/ 		__webpack_require__.p = "./_next/";
 /******/ 	}();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
