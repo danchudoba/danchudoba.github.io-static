@@ -6118,7 +6118,7 @@ function _interop_require_wildcard(obj, nodeInterop) {
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "static/css/" + {"185":"300c5851b79e97f0","931":"5a764bfcc1db6401"}[chunkId] + ".css";
+/******/ 			return "static/css/" + {"185":"300c5851b79e97f0","931":"6fccf342d30d272b"}[chunkId] + ".css";
 /******/ 		};
 /******/ 	}();
 /******/ 	
